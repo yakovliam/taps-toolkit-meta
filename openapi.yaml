@@ -208,13 +208,13 @@ components:
     Device:
       type: object
       required:
-        - deviceUid
+        - uid
         - longitude
         - latitude
         - deviceId
         - deviceToken
       properties:
-        deviceUid:
+        uid:
           type: string
         longitude:
           type: number
