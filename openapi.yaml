@@ -19,17 +19,17 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Device"
-  /devices/{deviceUid}:
+  /devices/{id}:
     get:
-      summary: Get a device by UID
+      summary: Get a device by ID
       operationId: getDevice
       security:
         - bearerAuth: []
       parameters:
-        - name: deviceUid
+        - name: id
           in: path
           required: true
-          description: The UID of the device to retrieve
+          description: The ID of the device to retrieve
           schema:
             type: string
       responses:
@@ -54,17 +54,17 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Identity"
-  /identities/{uid}:
+  /identities/{id}:
     get:
-      summary: Get an identity by UID
+      summary: Get an identity by ID
       operationId: getIdentity
       security:
         - bearerAuth: []
       parameters:
-        - name: uid
+        - name: id
           in: path
           required: true
-          description: The UID of the identity to retrieve
+          description: The ID of the identity to retrieve
           schema:
             type: string
       responses:
@@ -74,17 +74,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Identity"
-  /identities/{uid}/calculate-elo:
+  /identities/{id}/calculate-elo:
     get:
       summary: Calculate the ELO of an identity
       operationId: calculateElo
       security:
         - bearerAuth: []
       parameters:
-        - name: uid
+        - name: id
           in: path
           required: true
-          description: The UID of the identity to calculate the ELO for
+          description: The ID of the identity to calculate the ELO for
           schema:
             type: string
       responses:
