@@ -165,6 +165,24 @@ paths:
               application/json:
                 schema:
                   $ref: "#/components/schemas/Job"
+    /jobs/create:
+      post:
+        summary: Create a job
+        operationId: createJob
+        security:
+          - bearerAuth: []
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        responses:
+          "200":
+            description: The job
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Job"
 components:
   securitySchemes:
     bearerAuth:
@@ -292,3 +310,27 @@ components:
           type: array
           items:
             type: string
+        identityId:
+          type: string
+        gameConfigId:
+          type: string
+    JobCreateRequest:
+      type: object
+      required:
+        - friendlyName
+        - description
+        - targetFinalScore
+        - gameConfigId
+        - identityId
+      properties:
+        friendlyName:
+          type: string
+        description:
+          type: string
+        targetFinalScore:
+          type: integer
+          format: int64
+        gameConfigId:
+          type: string
+        identityId:
+          type: string
