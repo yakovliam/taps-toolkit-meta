@@ -175,7 +175,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Job"
+              $ref: "#/components/schemas/JobCreateRequest"
       responses:
         "200":
           description: The job
