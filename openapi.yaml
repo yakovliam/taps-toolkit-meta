@@ -145,45 +145,45 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Job"
-    /jobs/{id}:
-      get:
-        summary: Get a job by ID
-        operationId: getJob
-        security:
-          - bearerAuth: []
-        parameters:
-          - name: id
-            in: path
-            required: true
-            description: The ID of the job to retrieve
-            schema:
-              type: string
-        responses:
-          "200":
-            description: The job
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/Job"
-    /jobs/create:
-      post:
-        summary: Create a job
-        operationId: createJob
-        security:
-          - bearerAuth: []
-        requestBody:
+  /jobs/{id}:
+    get:
+      summary: Get a job by ID
+      operationId: getJob
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the job to retrieve
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The job
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Job"
-        responses:
-          "200":
-            description: The job
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/Job"
-    /game-configs:
+  /jobs/create:
+    post:
+      summary: Create a job
+      operationId: createJob
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Job"
+      responses:
+        "200":
+          description: The job
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+  /game-configs:
       get:
         summary: List all game configs
         operationId: listGameConfigs
