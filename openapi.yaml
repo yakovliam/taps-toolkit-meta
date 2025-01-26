@@ -310,7 +310,9 @@ components:
         - created
         - didComplete
         - isArchived
-        - gameScoreEntityList
+        - gameScoreIdList
+        - identityId
+        - gameConfigId
       properties:
         id:
           type: string
@@ -327,7 +329,7 @@ components:
           type: boolean
         isArchived:
           type: boolean
-        gameScoreEntityList:
+        gameScoreIdList:
           type: array
           items:
             type: string
